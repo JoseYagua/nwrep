@@ -53,6 +53,6 @@
         </table>
     </form:form>
     <spring:url var="lista" value="/mostrarComponentes.html"/>
-    <a href="${lista}" >Ver Lista de componentes</a>
+    <a href="${lista}" >Ver Lista de componente</a>
     
 </html>
