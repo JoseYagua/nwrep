@@ -6,11 +6,11 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-        <title>Componentes</title>
+        <title>Componentes del Crud</title>
     </head>
 
     <c:choose>  
-        <c:when test="${mensajeComponente !='Agregar Componente'}">  
+        <c:when test="'Agregar Componente'">  
             <!--<c:url var="accionComponente" value="actualizarComponentes.html"/>-->
             <spring:url var="accionComponente" value="/actualizarComponentes.html"/>
         </c:when>  
@@ -22,27 +22,28 @@
 
     <form:form id="agregar" modelAttribute="componenteForm" method="post" action="${accionComponente}">
         <table width="400px" height="150px">
+            
             <tr>
                 <form:hidden path="id" />
                 <td><form:label path="nombre">Nombre</form:label></td>
                 <td><form:input  path="nombre"/></td>
             </tr>
             <tr>
-                <td><form:label path="version">Versión</form:label></td>
-                <td><form:input  path="version"/></td>
+                <td><form:label path="direccion">Dirección</form:label></td>
+                <td><form:input  path="direccion"/></td>
             </tr> 
             <tr>
-                <td><form:label path="tipo">Tipo</form:label></td>
-                <td><form:input  path="tipo"/></td>
+                <td><form:label path="telefono">Telefono</form:label></td>
+                <td><form:input  path="telefono"/></td>
             </tr>
             <tr>
-                <td><form:label path="extension">Extensión</form:label></td>
-                <td><form:input  path="extension"/></td>
+                <td><form:label path="email">E-mail</form:label></td>
+                <td><form:input  path="email"/></td>
             </tr>
 
             <tr><td></td><td>
                     <c:choose>  
-                        <c:when test="${mensajeComponente !='Agregar Componente'}">  
+                        <c:when test="'Agregar Componente'">  
                             <input type="submit" value="Modificar" /> 
                         </c:when>  
                         <c:otherwise>  
@@ -53,6 +54,6 @@
         </table>
     </form:form>
     <spring:url var="lista" value="/mostrarComponentes.html"/>
-    <a href="${lista}" >Ver Lista de componentes</a>
+    <a href="" >Ver Lista de componentes</a>
     
 </html>

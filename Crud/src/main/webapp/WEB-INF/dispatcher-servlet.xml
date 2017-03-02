@@ -21,6 +21,7 @@
             <props>
                 <prop key="index.htm">indexController</prop>
                 <prop key="agregarComponentes.htm">agregarController</prop>
+                <prop key="mostrarComponentes.htm">mostrarController</prop>
             </props>
         </property>
     </bean>
@@ -39,5 +40,8 @@
     <bean name="agregarController"
           class="org.springframework.web.servlet.mvc.ParameterizableViewController"
           p:viewName="agregarComponentes" />
+    <bean name="mostrarController"
+          class="org.springframework.web.servlet.mvc.ParameterizableViewController"
+          p:viewName="mostrarComponentes" />
 
 </beans>
