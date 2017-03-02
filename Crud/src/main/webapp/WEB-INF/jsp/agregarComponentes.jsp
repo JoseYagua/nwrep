@@ -20,7 +20,9 @@
         </c:otherwise>  
     </c:choose>
 
-    <form:form id="agregar" modelAttribute="componenteForm" method="post" action="">
+<%----%>
+    <form:form id="agregar" modelAttribute="componenteForm" method="post" action="${accionComponente}">
+
         <table width="400px" height="150px">
             
             <tr>
@@ -32,6 +34,7 @@
                 <td><form:label path="direccion">Dirección</form:label></td>
                 <td><form:input  path="direccion"/></td>
             </tr> 
+             
             <tr>
                 <td><form:label path="telefono">Telefono</form:label></td>
                 <td><form:input  path="telefono"/></td>
@@ -42,6 +45,7 @@
             </tr>
 
             <tr><td></td><td>
+                    
                     <c:choose>  
                         <c:when test="'Agregar Componente'">  
                             <input type="submit" value="Modificar" /> 
@@ -50,7 +54,8 @@
                             <input type="submit" value="Agregar" />
                         </c:otherwise>  
                     </c:choose>
-                </td></tr>
+                
+            </td></tr>
         </table>
     </form:form>
 
