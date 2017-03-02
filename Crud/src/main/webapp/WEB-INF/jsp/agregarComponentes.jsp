@@ -19,9 +19,10 @@
             <spring:url var="accionComponente" value="/agregarComponentes.html"/> 
         </c:otherwise>  
     </c:choose>
-
+<%----%>
     <form:form id="agregar" modelAttribute="componenteForm" method="post" action="${accionComponente}">
         <table width="400px" height="150px">
+            
             <tr>
                 <form:hidden path="id" />
                 <td><form:label path="nombre">Nombre</form:label></td>
@@ -31,6 +32,7 @@
                 <td><form:label path="version">Versión</form:label></td>
                 <td><form:input  path="version"/></td>
             </tr> 
+             
             <tr>
                 <td><form:label path="tipo">Tipo</form:label></td>
                 <td><form:input  path="tipo"/></td>
@@ -41,6 +43,7 @@
             </tr>
 
             <tr><td></td><td>
+                    
                     <c:choose>  
                         <c:when test="${mensajeComponente !='Agregar Componente'}">  
                             <input type="submit" value="Modificar" /> 
@@ -49,10 +52,12 @@
                             <input type="submit" value="Agregar" />
                         </c:otherwise>  
                     </c:choose>
-                </td></tr>
+                
+            </td></tr>
         </table>
     </form:form>
-    <spring:url var="lista" value="/mostrarComponentes.html"/>
+   
+    <spring:url var="lista" value="/mostrarComponentes.htm"/>
     <a href="${lista}" >Ver Lista de componente</a>
     
 </html>
