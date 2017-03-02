@@ -20,7 +20,7 @@
         </c:otherwise>  
     </c:choose>
 
-    <form:form id="agregar" modelAttribute="componenteForm" method="post" action="${accionComponente}">
+    <form:form id="agregar" modelAttribute="componenteForm" method="post" action="">
         <table width="400px" height="150px">
             
             <tr>
@@ -53,7 +53,6 @@
                 </td></tr>
         </table>
     </form:form>
-    <spring:url var="lista" value="/mostrarComponentes.html"/>
-    <a href="" >Ver Lista de componentes</a>
+  
     
 </html>
