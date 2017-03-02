@@ -21,7 +21,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 public class Controlador {
     
-    
+    /*
    private ComponenteService componenteService= new ComponenteServiceImpl();
      
     @RequestMapping(value="/agregarComponentes.html", method = RequestMethod.POST)
@@ -53,5 +53,5 @@ public class Controlador {
         System.out.println("Se muestran todos los componentes");
         return new ModelAndView("mostrarComponentes" , "listaComponentes", componenteService.mostrarComponentes());
     }
-    
+    */
 }
