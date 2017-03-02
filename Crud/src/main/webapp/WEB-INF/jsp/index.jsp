@@ -5,10 +5,15 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
-        <title>Welcome to Spring Web MVC project..</title>
+        <title>Crud de Prueba</title>
     </head>
 
     <body>
-        <h1>Hola a todos!!!</h1>
+        <h1>Seleccione Opción del Menú</h1>
+        <ul>
+            <li><a href="">Insertar</a></li>
+            <li><a href="">Actualizar</a></li>
+            <li><a href="">Eliminar</a></li>
+        </ul>
     </body>
 </html>
