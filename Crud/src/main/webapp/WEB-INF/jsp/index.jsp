@@ -11,9 +11,8 @@
     <body>
         <h1>Seleccione Opción del Menú</h1>
         <ul>
-            <li><a href="">Insertar</a></li>
-            <li><a href="">Actualizar</a></li>
-            <li><a href="">Eliminar</a></li>
+            <li><a href="agregarComponentes.htm">Agregar</a></li>
+            <li><a href="mostrarComponentes.htm">Mostrar</a></li>
         </ul>
     </body>
 </html>
