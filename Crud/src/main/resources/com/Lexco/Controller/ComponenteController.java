@@ -5,6 +5,7 @@
  */
 package com.Lexco.Controller;
 
+import com.Lexco.servicios.ComponenteService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -18,14 +19,12 @@ import org.springframework.web.servlet.ModelAndView;
  */
 
 @Controller
-
-public class Controlador {
-    
-    /*
-   private ComponenteService componenteService= new ComponenteServiceImpl();
+public class ComponenteController {
+ 
+    private ComponenteService componenteService= (ComponenteService) new ComponenteServiceImpl();
      
     @RequestMapping(value="/agregarComponentes.html", method = RequestMethod.POST)
-    public ModelAndView guardarComponente(@ModelAttribute("componenteForm") ComponentesFrom componente) {
+    public ModelAndView guardarComponente(@ModelAttribute("componenteForm") ComponenteForm componente) {
         System.out.println("Ingreso a componente guardado");
         componenteService.agregarComponente(componente);
         System.out.println("Componente guardado");
@@ -33,7 +32,7 @@ public class Controlador {
     }
      
     @RequestMapping(value="/actualizarComponentes.html", method = RequestMethod.POST)
-    public ModelAndView actualizarComponente(@ModelAttribute("componenteForm") ComponentesFrom componente) {
+    public ModelAndView actualizarComponente(@ModelAttribute("componenteForm") ComponenteForm componente) {
         System.out.println("Ingreso a componente actualizado");
         componenteService.actualizarComponente(componente);
         System.out.println("Componente actualizado");
@@ -48,10 +47,29 @@ public class Controlador {
         return new ModelAndView("mostrarComponentes" , "listaComponentes", componenteService.mostrarComponentes());
     }
      
+    @RequestMapping(value="/modificarComponentes.html/{componenteId}", method = RequestMethod.GET)
+    public ModelAndView modificarComponente(@PathVariable("componenteId") Integer componenteId) {
+        System.out.println("Vamos a modificar componente");
+        ComponenteForm componente=componenteService.mostrarComponente(componenteId);
+        ModelAndView modelo= new ModelAndView("agregarComponentes" , "mensaje", "Usuario Correcto");
+        modelo.addObject("mensajeComponente","Modificar Componente");
+        modelo.addObject("componenteForm", componente);
+        return modelo;
+    }
+     
+    @RequestMapping(value="/volverComponente.html", method = RequestMethod.GET)
+    public ModelAndView volverComponente() {
+        System.out.println("Volvemos a agregar componente");
+        System.out.println("Se coloco al usuario y clave correctamente y va a la pagina de agregarComponentes");
+        ModelAndView modelo= new ModelAndView("agregarComponentes" , "mensaje", "Usuario Correcto");
+        modelo.addObject("mensajeComponente","Agregar Componente");
+        modelo.addObject("componenteForm", new ComponenteForm());
+        return modelo;
+    }
+     
     @RequestMapping(value="/mostrarComponentes.html", method = RequestMethod.GET)
     public ModelAndView mostrarComponentes() {
         System.out.println("Se muestran todos los componentes");
         return new ModelAndView("mostrarComponentes" , "listaComponentes", componenteService.mostrarComponentes());
     }
-    */
 }

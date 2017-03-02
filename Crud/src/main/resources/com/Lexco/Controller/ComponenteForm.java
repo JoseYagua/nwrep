@@ -17,7 +17,7 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name="componentes")
-public class ComponentesFrom {
+public class ComponenteForm {
      
     @Id
     @Column(name="id")
