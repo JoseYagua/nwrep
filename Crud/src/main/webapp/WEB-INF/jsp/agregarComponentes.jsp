@@ -8,13 +8,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
         <title>Componentes</title>
     </head>
-    <body>
-        <h4>${mensaje} : ${usuarioForm.nombre}</h4>
-        <spring:url var="salir" value="/inicializarLogin.html"/>
-        <a href="${lista}" >Salir</a>
-    </body>
 
-    <h4>${mensajeComponente}</h4>
     <c:choose>  
         <c:when test="${mensajeComponente !='Agregar Componente'}">  
             <!--<c:url var="accionComponente" value="actualizarComponentes.html"/>-->
@@ -60,4 +54,5 @@
     </form:form>
     <spring:url var="lista" value="/mostrarComponentes.html"/>
     <a href="${lista}" >Ver Lista de componentes</a>
+    
 </html>

@@ -6,4 +6,4 @@ This JSP is here to provide a redirect to the dispatcher
 servlet but should be the only JSP outside of WEB-INF.
 --%>
 <%@page contentType="text/html" pageEncoding="windows-1252"%>
-<jsp:forward page="agregarComponentes.html"></jsp:forward>
+<% response.sendRedirect("agregarComponentes.htm"); %>
