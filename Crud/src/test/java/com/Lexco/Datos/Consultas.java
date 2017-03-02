@@ -4,6 +4,7 @@ import com.Lexco.Modelo.NewHibernateUtil;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
+import org.hibernate.query.Query;
 
 /**
  *
@@ -12,7 +13,7 @@ import org.hibernate.Transaction;
 
 public class Consultas {
 
-public void guardar(Object dato) {
+public void crearAgenda(Object dato) {
         SessionFactory sesion = NewHibernateUtil.getSessionFactory();
         Session session;
         session = sesion.openSession();
@@ -21,5 +22,33 @@ public void guardar(Object dato) {
         tra.commit();
         session.close();
     }
-    
+ public void leerAgenda(Object datos){
+        SessionFactory sesion = NewHibernateUtil.getSessionFactory();
+        Session session;
+        session = sesion.openSession();
+        Transaction tra = session.beginTransaction();
+        session.createQuery("from agenda");
+        tra.commit();
+        session.close();
+    }
+    public void modAgenda(Object datos){
+        SessionFactory sesion = NewHibernateUtil.getSessionFactory();
+        Session session;
+        session = sesion.openSession();
+        Transaction tra = session.beginTransaction();
+        session.update(datos);
+        tra.commit();
+        session.close();
+    }    
+    public void busqAgenda(int dato){
+        SessionFactory sesion = NewHibernateUtil.getSessionFactory();
+        Session session;
+        session = sesion.openSession();
+        Transaction tra = session.beginTransaction();
+        Query query = session.createQuery("from agenda where id=:dato");
+        query.setParameter("id", dato); //forma de los parametros
+        tra.commit();
+        session.close();
+    }
+
 }

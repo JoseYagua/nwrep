@@ -29,7 +29,7 @@
                 <td><form:input  path="nombre"/></td>
             </tr>
             <tr>
-                <td><form:label path="direccion">Dirección</form:label></td>
+                <td><form:label path="direccion">DirecciÃ³n</form:label></td>
                 <td><form:input  path="direccion"/></td>
             </tr> 
             <tr>
@@ -53,6 +53,6 @@
                 </td></tr>
         </table>
     </form:form>
-  
+
     
 </html>

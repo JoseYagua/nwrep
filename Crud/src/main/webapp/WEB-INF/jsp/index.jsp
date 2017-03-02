@@ -9,10 +9,12 @@
     </head>
 
     <body>
-        <h1>Seleccione Opción del Menú</h1>
+        <h1>Seleccione OpciÃ³n del MenÃº</h1>
         <ul>
             <li><a href="agregarComponentes.htm">Agregar Componentes</a></li>
             <li><a href="mostrarComponentes.htm">Mostrar Componentes</a></li>
+
+
         </ul>
     </body>
 </html>
